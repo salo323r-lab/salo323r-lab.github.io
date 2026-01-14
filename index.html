@@ -56,7 +56,7 @@
 </head>
 <body class="min-h-screen bg-white text-[#1A1A1A] selection:bg-[#FF6B00] selection:text-white">
 
-    <!-- Навігація -->
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-[60] border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2 font-bold text-xl tracking-tighter cursor-pointer" onclick="navigateTo('home')">
@@ -64,56 +64,56 @@
                 <span>BS.Design</span>
             </div>
             
-            <!-- Десктопне меню -->
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
                 <button onclick="navigateTo('home')" class="nav-link active-nav flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
-                    <i data-lucide="home" class="w-4 h-4"></i>Головна
+                    <i data-lucide="home" class="w-4 h-4"></i>Home
                 </button>
                 <button onclick="navigateTo('portfolio')" class="nav-link flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
-                    <i data-lucide="briefcase" class="w-4 h-4"></i>Портфоліо
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>Portfolio
                 </button>
                 <button onclick="navigateTo('contacts')" class="nav-link flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
-                    <i data-lucide="mail" class="w-4 h-4"></i>Контакти
+                    <i data-lucide="mail" class="w-4 h-4"></i>Contacts
                 </button>
             </div>
 
-            <!-- Мобільна кнопка -->
+            <!-- Mobile Toggle -->
             <button class="md:hidden p-2 text-[#1A1A1A] active:scale-95 transition-transform" onclick="toggleMenu()">
                 <i data-lucide="menu" id="menu-icon"></i>
             </button>
         </div>
 
-        <!-- Мобільне меню -->
+        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-6 flex flex-col gap-4 shadow-xl">
             <button onclick="navigateTo('home')" class="flex items-center gap-3 text-left text-lg font-bold uppercase tracking-tight py-2 border-b border-gray-50">
-                <i data-lucide="home" class="w-5 h-5 text-[#FF6B00]"></i>Головна
+                <i data-lucide="home" class="w-5 h-5 text-[#FF6B00]"></i>Home
             </button>
             <button onclick="navigateTo('portfolio')" class="flex items-center gap-3 text-left text-lg font-bold uppercase tracking-tight py-2 border-b border-gray-50">
-                <i data-lucide="briefcase" class="w-5 h-5 text-[#FF6B00]"></i>Портфоліо
+                <i data-lucide="briefcase" class="w-5 h-5 text-[#FF6B00]"></i>Portfolio
             </button>
             <button onclick="navigateTo('contacts')" class="flex items-center gap-3 text-left text-lg font-bold uppercase tracking-tight py-2">
-                <i data-lucide="mail" class="w-5 h-5 text-[#FF6B00]"></i>Контакти
+                <i data-lucide="mail" class="w-5 h-5 text-[#FF6B00]"></i>Contacts
             </button>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-6 pt-24 pb-20 overflow-x-hidden">
         
-        <!-- Головна сторінка -->
+        <!-- Home Page -->
         <div id="home" class="page-content active">
             <div class="bento-grid">
-                <!-- Основний банер -->
+                <!-- Main Banner -->
                 <div class="md:col-span-3 md:row-span-2 bg-[#F5F5F5] rounded-[32px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[300px] md:min-h-0">
                     <div class="absolute top-8 right-8 w-24 h-24 bg-[#FF6B00] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <h1 class="text-3xl md:text-5xl font-black text-[#1A1A1A] leading-[1.1] mb-4 tracking-tight">
-                        Будуємо майбутнє <br> через <span class="text-[#FF6B00]">дизайн</span>
+                        Building the future <br> through <span class="text-[#FF6B00]">design</span>
                     </h1>
                     <p class="text-gray-500 max-w-md text-base md:text-lg font-medium">
-                        Поєднання естетики та функціональності в кожному пікселі вашого продукту.
+                        Merging aesthetics and functionality in every pixel of your product.
                     </p>
                 </div>
 
-                <!-- Швидкий контакт -->
+                <!-- Quick Contact -->
                 <div class="md:col-span-1 md:row-span-2 bg-[#1A1A1A] rounded-[32px] p-8 text-white flex flex-col justify-between group transition-all duration-500 hover:shadow-xl border border-transparent hover:border-white/10 min-h-[300px] md:min-h-0">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
@@ -124,70 +124,70 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-black mb-3 text-white leading-tight">Залишаймося на зв'язку</h3>
-                        <p class="text-gray-400 text-sm font-medium mb-6">Готовий обговорити ваші найсміливіші ідеї та нові проекти.</p>
+                        <h3 class="text-2xl font-black mb-3 text-white leading-tight">Let's stay in touch</h3>
+                        <p class="text-gray-400 text-sm font-medium mb-6">Ready to discuss your boldest ideas and new projects.</p>
                         <button onclick="navigateTo('contacts')" class="w-full bg-[#FF6B00] py-4 rounded-2xl flex items-center justify-center gap-3 font-black uppercase text-[10px] tracking-[0.2em] transition-all hover:bg-white hover:text-[#1A1A1A] group shadow-lg shadow-[#FF6B00]/20">
-                            Написати мені <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            Message me <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Блок Про мене -->
+                <!-- About Me Block -->
                 <div class="md:col-span-4 md:row-span-1 bg-white border-2 border-[#F5F5F5] rounded-[32px] p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 group hover:border-[#FF6B00] transition-colors">
                     <div class="w-20 h-20 md:w-32 md:h-32 shrink-0 rounded-[24px] md:rounded-[28px] overflow-hidden border-4 border-[#F5F5F5] group-hover:border-[#FF6B00]/20 transition-all shadow-lg">
-                        <img src="https://i.postimg.cc/HnsygZ11/photo-127-1.png" alt="Портрет" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100">
+                        <img src="https://i.postimg.cc/HnsygZ11/photo-127-1.png" alt="Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100">
                     </div>
                     <div class="flex flex-col justify-center text-center md:text-left">
-                        <h2 class="text-xl md:text-2xl font-black mb-2 text-[#1A1A1A]">Про мене</h2>
+                        <h2 class="text-xl md:text-2xl font-black mb-2 text-[#1A1A1A]">About me</h2>
                         <p class="text-gray-500 text-sm md:text-base font-medium leading-relaxed max-w-3xl">
-                            Привіт, я Богдан, дизайнер з 5-річним досвідом створення цифрових продуктів. Я спеціалізуюся на інтерфейсах, які допомагають бізнесу розвиватися.
+                            Hi, I'm Bohdan, a designer with 5 years of experience creating digital products. I specialize in interfaces that help businesses grow.
                         </p>
                     </div>
                 </div>
 
-                <!-- Послуги -->
+                <!-- Services -->
                 <div class="md:col-span-2 md:row-span-1 bg-[#FF6B00] rounded-[32px] p-8 text-white flex items-center justify-between group min-h-[140px] md:min-h-0">
                     <div>
-                        <h2 class="text-xl md:text-2xl font-black mb-1">Мої послуги</h2>
+                        <h2 class="text-xl md:text-2xl font-black mb-1">My Services</h2>
                         <p class="text-sm md:text-base opacity-80 font-medium">UI/UX Design, Branding, Logo</p>
                     </div>
                     <div class="text-4xl md:text-5xl font-black opacity-20 group-hover:opacity-40 transition-opacity">01</div>
                 </div>
 
-                <!-- Статистика -->
+                <!-- Stats -->
                 <div class="md:col-span-1 md:row-span-1 bg-white border-2 border-[#F5F5F5] rounded-[32px] p-8 flex flex-col justify-center items-center text-center group hover:border-[#FF6B00] transition-colors min-h-[140px] md:min-h-0">
                     <span class="text-3xl md:text-4xl font-black text-[#1A1A1A] group-hover:scale-110 transition-transform duration-300">30+</span>
-                    <span class="text-gray-400 font-bold uppercase text-[9px] md:text-[10px] tracking-widest mt-1">Проектів</span>
+                    <span class="text-gray-400 font-bold uppercase text-[9px] md:text-[10px] tracking-widest mt-1">Projects</span>
                 </div>
 
-                <!-- Кнопка Портфоліо -->
+                <!-- Portfolio Button -->
                 <div class="md:col-span-1 md:row-span-1 bg-[#F5F5F5] rounded-[32px] p-4 flex items-center justify-center group overflow-hidden relative min-h-[140px] md:min-h-0">
                     <button onclick="navigateTo('portfolio')" class="w-full h-full bg-white rounded-[24px] shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:bg-[#1A1A1A] hover:text-white group-hover:scale-[1.02]">
                         <div class="p-2 bg-[#FF6B00]/10 rounded-xl group-hover:bg-[#FF6B00] transition-colors">
                             <i data-lucide="briefcase" class="text-[#FF6B00] w-5 h-5 group-hover:text-white"></i>
                         </div>
-                        <span class="text-[10px] font-black uppercase tracking-widest">Портфоліо</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest">Portfolio</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Сторінка Портфоліо -->
+        <!-- Portfolio Page -->
         <div id="portfolio" class="page-content">
             <div class="space-y-10">
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
                         <div class="flex items-center gap-2 text-[#FF6B00] font-bold text-sm uppercase tracking-widest mb-2">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i><span>Вибрані роботи</span>
+                            <i data-lucide="sparkles" class="w-4 h-4"></i><span>Selected Works</span>
                         </div>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">Портфоліо</h2>
+                        <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">Portfolio</h2>
                     </div>
                     <p class="text-gray-500 max-w-sm text-sm font-medium leading-relaxed">
-                        Колекція проектів, де дизайн зустрічається з технологіями.
+                        A collection of projects where design meets technology.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 md:auto-rows-[240px]">
-                    <!-- Проект 1 -->
+                    <!-- Project 1 -->
                     <div class="md:col-span-2 md:row-span-2 bg-[#F5F5F5] rounded-[32px] md:rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl h-[350px] md:h-auto">
                         <img src="images/ESD%20Landing%20Page%20Web.png" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -199,7 +199,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Проект 2 -->
+                    <!-- Project 2 -->
                     <div class="md:col-span-2 md:row-span-1 bg-[#1A1A1A] rounded-[32px] md:rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl h-[240px]">
                         <img src="images/ESD%20Landing%20Page%20Testimonials.png" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -208,7 +208,7 @@
                             <h3 class="text-xl md:text-2xl font-black text-white">Testimonials</h3>
                         </div>
                     </div>
-                    <!-- Проект 3 -->
+                    <!-- Project 3 -->
                     <div class="md:col-span-1 md:row-span-1 bg-[#FF6B00] rounded-[32px] md:rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl h-[240px]">
                         <img src="images/ESD%20Landing%20Page%20Testimonials.png" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -217,7 +217,7 @@
                             <h3 class="text-lg md:text-xl font-black">Carousel Prototype</h3>
                         </div>
                     </div>
-                    <!-- Проект 4 -->
+                    <!-- Project 4 -->
                     <div class="md:col-span-1 md:row-span-1 bg-white border-2 border-[#F5F5F5] rounded-[32px] md:rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:border-[#FF6B00] h-[240px]">
                         <img src="images/Social%20media%20gallery.png" alt="" class="absolute inset-0 w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110 opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-50/90 via-transparent to-transparent"></div>
@@ -227,29 +227,29 @@
                         </div>
                     </div>
 
-                    <!-- Call to Action -->
+                    <!-- Call to Action Card -->
                     <div class="md:col-span-4 bg-[#F5F5F5] rounded-[32px] md:rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 group hover:bg-[#FF6B00]/5 transition-all">
                         <div class="text-center md:text-left">
                             <h3 class="text-2xl md:text-3xl font-black text-[#1A1A1A] tracking-tight">
                                 Good works <span class="text-[#FF6B00]">let's make something big</span> together
                             </h3>
-                            <p class="text-gray-500 font-medium mt-2">Доступний для нових проектів та співпраці.</p>
+                            <p class="text-gray-500 font-medium mt-2">Available for new projects and collaborations.</p>
                         </div>
                         <button onclick="navigateTo('contacts')" class="bg-[#1A1A1A] text-white px-10 py-5 rounded-[24px] font-black uppercase text-[10px] tracking-[0.2em] transition-all hover:bg-[#FF6B00] hover:shadow-xl hover:shadow-[#FF6B00]/30 active:scale-95 flex items-center gap-3 shrink-0">
-                            Зв'язатися <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            Contact Me <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Сторінка контактів -->
+        <!-- Contacts Page -->
         <div id="contacts" class="page-content">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div class="bg-[#F5F5F5] rounded-[32px] md:rounded-[40px] p-8 md:p-10 flex flex-col justify-between min-h-[400px]">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-black mb-6 tracking-tight text-[#1A1A1A]">Давайте створимо <br><span class="text-[#FF6B00]">щось особливе</span> разом</h2>
-                        <p class="text-gray-600 mb-8 font-medium leading-relaxed text-sm md:text-base">Пишіть мені напряму або використовуйте посилання нижче.</p>
+                        <h2 class="text-3xl md:text-4xl font-black mb-6 tracking-tight text-[#1A1A1A]">Let's create <br><span class="text-[#FF6B00]">something special</span> together</h2>
+                        <p class="text-gray-600 mb-8 font-medium leading-relaxed text-sm md:text-base">Message me directly or use the links below.</p>
                         
                         <div class="space-y-4 md:space-y-6">
                             <div class="flex items-center gap-4 group cursor-pointer p-1" onclick="copyText('Strokalisbog@gmail.com')">
@@ -258,7 +258,7 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="font-bold text-base md:text-lg break-all">Strokalisbog@gmail.com</span>
-                                    <span class="text-[9px] font-black uppercase text-gray-400 tracking-wider">Натисніть, щоб скопіювати</span>
+                                    <span class="text-[9px] font-black uppercase text-gray-400 tracking-wider">Click to copy</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 group cursor-pointer p-1" onclick="window.open('https://t.me/M0nte_Crist0')">
@@ -276,15 +276,15 @@
 
                 <div class="bg-[#1A1A1A] rounded-[32px] md:rounded-[40px] p-4 flex flex-col group overflow-hidden relative min-h-[450px]">
                     <div class="flex-1 rounded-[28px] md:rounded-[32px] overflow-hidden relative">
-                        <img src="https://i.postimg.cc/ZRZmsn11/photo-126-6.png" alt="Богдан" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+                        <img src="https://i.postimg.cc/ZRZmsn11/photo-126-6.png" alt="Bohdan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-80"></div>
                         <div class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
                             <div class="flex items-center gap-2 text-[#FF6B00] mb-3">
                                 <i data-lucide="star" class="w-4 h-4 md:w-5 md:h-5 fill-[#FF6B00]"></i>
-                                <span class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]">Готовий до нових викликів</span>
+                                <span class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]">Ready for new challenges</span>
                             </div>
                             <h3 class="text-2xl md:text-3xl font-black text-white leading-tight">
-                                Ваш наступний прорив починається з одного повідомлення.
+                                Your next breakthrough starts with a single message.
                             </h3>
                         </div>
                     </div>
@@ -298,23 +298,23 @@
             <div class="w-8 h-8 bg-[#1A1A1A] rounded-lg flex items-center justify-center text-white text-xs font-black">B</div>
             <span class="tracking-tighter text-lg">BS.Design</span>
         </div>
-        <p class="text-gray-400 text-[10px] md:text-sm font-bold uppercase tracking-widest text-center">© 2026 Усі права захищено.</p>
+        <p class="text-gray-400 text-[10px] md:text-sm font-bold uppercase tracking-widest text-center">© 2026 All rights reserved.</p>
         <div class="flex gap-6 md:gap-8 text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-            <a href="#" class="hover:text-[#FF6B00]">Конфіденційність</a>
-            <a href="#" class="hover:text-[#FF6B00]">Умови</a>
+            <a href="#" class="hover:text-[#FF6B00]">Privacy</a>
+            <a href="#" class="hover:text-[#FF6B00]">Terms</a>
         </div>
     </footer>
 
-    <!-- Повідомлення про копіювання -->
+    <!-- Success Toast -->
     <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1A1A1A] text-white px-6 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest opacity-0 pointer-events-none transition-all duration-300 z-[100] shadow-2xl border border-white/10">
-        Скопійовано в буфер обміну!
+        Copied to clipboard!
     </div>
 
     <script>
-        // Ініціалізація іконок
+        // Initialize icons
         lucide.createIcons();
 
-        // Логіка навігації
+        // Navigation Logic
         function navigateTo(pageId) {
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
@@ -365,4 +365,3 @@
     </script>
 </body>
 </html>
-
