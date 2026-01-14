@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS.Design | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-auto-rows: 180px;
+            }
+        }
+
+        .active-nav {
+            color: #FF6B00 !important;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-[#1A1A1A] selection:bg-[#FF6B00] selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tighter cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-8 h-8 bg-[#FF6B00] rounded-lg flex items-center justify-center text-white text-sm font-black">B</div>
+                <span>BS.Design</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <button onclick="navigateTo('home')" class="nav-link active-nav flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
+                    <i data-lucide="home" class="w-4 h-4"></i>Home
+                </button>
+                <button onclick="navigateTo('portfolio')" class="nav-link flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>Portfolio
+                </button>
+                <button onclick="navigateTo('contacts')" class="nav-link flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#FF6B00]">
+                    <i data-lucide="mail" class="w-4 h-4"></i>Contacts
+                </button>
+            </div>
+
+            <button class="md:hidden text-[#1A1A1A]" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-6 flex flex-col gap-4">
+            <button onclick="navigateTo('home')" class="text-left text-lg font-bold uppercase tracking-tight">Home</button>
+            <button onclick="navigateTo('portfolio')" class="text-left text-lg font-bold uppercase tracking-tight">Portfolio</button>
+            <button onclick="navigateTo('contacts')" class="text-left text-lg font-bold uppercase tracking-tight">Contacts</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <div class="bento-grid">
+                <div class="md:col-span-3 md:row-span-2 bg-[#F5F5F5] rounded-[32px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group">
+                    <div class="absolute top-8 right-8 w-24 h-24 bg-[#FF6B00] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <h1 class="text-3xl md:text-5xl font-black text-[#1A1A1A] leading-[1.15] mb-4 tracking-tight">
+                        Building the future <br> through <span class="text-[#FF6B00]">design</span>
+                    </h1>
+                    <p class="text-gray-500 max-w-md text-lg font-medium">
+                        Merging aesthetics and functionality in every pixel of your product.
+                    </p>
+                </div>
+
+                <div class="md:col-span-1 md:row-span-2 bg-[#1A1A1A] rounded-[32px] p-8 text-white flex flex-col justify-between group transition-all duration-500 hover:shadow-xl hover:shadow-[#FF6B00]/10 border border-transparent hover:border-white/10">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="text-[#FF6B00] w-6 h-6"></i>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-[#FF6B00]/20 flex items-center justify-center">
+                            <div class="w-2 h-2 bg-[#FF6B00] rounded-full animate-ping"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black mb-4 text-white leading-tight">Let's keep in touch</h3>
+                        <p class="text-gray-400 text-sm font-medium mb-6">Ready to discuss your boldest ideas and new projects.</p>
+                        <button onclick="navigateTo('contacts')" class="w-full bg-[#FF6B00] py-4 rounded-2xl flex items-center justify-center gap-3 font-black uppercase text-[10px] tracking-[0.2em] transition-all hover:bg-white hover:text-[#1A1A1A] group shadow-lg shadow-[#FF6B00]/20">
+                            Message Me <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="md:col-span-4 md:row-span-1 bg-white border-2 border-[#F5F5F5] rounded-[32px] p-8 flex flex-col md:flex-row items-center gap-8 group hover:border-[#FF6B00] transition-colors">
+                    <div class="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-[28px] overflow-hidden border-4 border-[#F5F5F5] group-hover:border-[#FF6B00]/20 transition-all shadow-lg">
+                        <img src="https://i.postimg.cc/HnsygZ11/photo-127-1.png" alt="Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100">
+                    </div>
+                    <div class="flex flex-col justify-center text-center md:text-left">
+                        <h2 class="text-2xl font-black mb-2 text-[#1A1A1A]">About Me</h2>
+                        <p class="text-gray-500 font-medium leading-relaxed max-w-3xl">
+                            Hi, I'm Bohdan, a designer with 5 years of experience creating digital products. I specialize in interfaces that help businesses grow. My goal is to transform your ideas into functional and aesthetic solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 md:row-span-1 bg-[#FF6B00] rounded-[32px] p-8 text-white flex items-center justify-between group">
+                    <div>
+                        <h2 class="text-2xl font-black mb-1">My Services</h2>
+                        <p class="opacity-80 font-medium">UI/UX Design, Branding, Logo</p>
+                    </div>
+                    <div class="text-5xl font-black opacity-20 group-hover:opacity-40 transition-opacity">01</div>
+                </div>
+
+                <div class="md:col-span-1 md:row-span-1 bg-white border-2 border-[#F5F5F5] rounded-[32px] p-8 flex flex-col justify-center items-center text-center group hover:border-[#FF6B00] transition-colors">
+                    <span class="text-4xl font-black text-[#1A1A1A] group-hover:scale-110 transition-transform duration-300">30+</span>
+                    <span class="text-gray-400 font-bold uppercase text-[10px] tracking-widest mt-1">Projects</span>
+                </div>
+
+                <div class="md:col-span-1 md:row-span-1 bg-[#F5F5F5] rounded-[32px] p-4 flex items-center justify-center group overflow-hidden relative">
+                    <button onclick="navigateTo('portfolio')" class="w-full h-full bg-white rounded-[24px] shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:bg-[#1A1A1A] hover:text-white group-hover:scale-[1.02]">
+                        <div class="p-3 bg-[#FF6B00]/10 rounded-xl group-hover:bg-[#FF6B00] transition-colors">
+                            <i data-lucide="briefcase" class="text-[#FF6B00] w-6 h-6 group-hover:text-white"></i>
+                        </div>
+                        <span class="text-[11px] font-black uppercase tracking-widest">Portfolio</span>
+                        <i data-lucide="arrow-right" class="absolute bottom-6 right-8 w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Page -->
+        <div id="portfolio" class="page-content">
+            <div class="space-y-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 text-[#FF6B00] font-bold text-sm uppercase tracking-widest mb-2">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i><span>Selected Works</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tight">Portfolio</h2>
+                    </div>
+                    <p class="text-gray-500 max-w-sm text-sm font-medium leading-relaxed">
+                        A collection of projects where design meets technology.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:auto-rows-[240px]">
+                    <!-- Project 1 -->
+                    <div class="md:col-span-2 md:row-span-2 bg-[#F5F5F5] rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-[400px] md:h-auto">
+                        <div class="absolute inset-0 bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://i.postimg.cc/PN2F2Fzn/ESD-Landing-Page-Web.png')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative h-full p-8 flex flex-col justify-between">
+                            <span class="self-start text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">Web Design</span>
+                            <div>
+                                <h3 class="text-2xl font-black text-white">ESD Landing Page</h3>
+                                <p class="text-white/50 text-sm mt-1">#Landing #Clean UI</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="md:col-span-2 md:row-span-1 bg-[#1A1A1A] rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-[240px]">
+                        <div class="absolute inset-0 bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://i.postimg.cc/QV0n0ngz/Social-media-gallery.png')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative h-full p-8 flex flex-col justify-between">
+                            <span class="self-start text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">Visual Design</span>
+                            <h3 class="text-2xl font-black text-white">Social Gallery</h3>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="md:col-span-1 md:row-span-1 bg-[#FF6B00] rounded-[40px] relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-[240px]">
+                        <div class="absolute inset-0 bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://i.postimg.cc/7bxW1yzg/Carousel-prototype-example-1.png')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative h-full p-8 flex flex-col justify-between text-white">
+                            <span class="self-start text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">Motion</span>
+                            <h3 class="text-xl font-black">Carousel Prototype</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Page -->
+        <div id="contacts" class="page-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-[#F5F5F5] rounded-[40px] p-10 flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-4xl font-black mb-6 tracking-tight text-[#1A1A1A]">Let's create <br><span class="text-[#FF6B00]">something</span> together</h2>
+                        <p class="text-gray-600 mb-8 font-medium leading-relaxed">Reach out directly or use the contacts below.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 group cursor-pointer" onclick="copyText('Strokalisbog@gmail.com')">
+                                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-all shadow-sm">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-lg">Strokalisbog@gmail.com</span>
+                                    <span class="text-[10px] font-bold uppercase text-gray-400">Click to copy</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 group cursor-pointer" onclick="window.open('https://t.me/M0nte_Crist0')">
+                                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#FF6B00] group-hover:bg-[#FF6B00] group-hover:text-white transition-all shadow-sm">
+                                    <i data-lucide="send" class="w-6 h-6"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-lg">t.me/M0nte_Crist0</span>
+                                    <span class="text-[10px] font-bold uppercase text-gray-400">Telegram</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#1A1A1A] rounded-[40px] p-4 flex flex-col group overflow-hidden relative min-h-[500px]">
+                    <div class="flex-1 rounded-[32px] overflow-hidden relative">
+                        <img src="https://i.postimg.cc/ZRZmsn11/photo-126-6.png" alt="Bohdan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <div class="flex items-center gap-2 text-[#FF6B00] mb-3 animate-pulse">
+                                <i data-lucide="star" class="w-5 h-5 fill-[#FF6B00]"></i>
+                                <span class="text-[10px] font-black uppercase tracking-[0.3em]">Ready for new challenges</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-white leading-tight">
+                                Your next breakthrough starts with a single message.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-2 font-bold cursor-pointer" onclick="navigateTo('home')">
+            <div class="w-8 h-8 bg-[#1A1A1A] rounded-lg flex items-center justify-center text-white text-xs font-black">B</div>
+            <span class="tracking-tighter text-lg">BS.Design</span>
+        </div>
+        <p class="text-gray-400 text-sm font-bold uppercase tracking-widest">© 2026 All rights reserved.</p>
+        <div class="flex gap-8 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
+            <a href="#" class="hover:text-[#FF6B00]">Privacy</a>
+            <a href="#" class="hover:text-[#FF6B00]">Terms</a>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1A1A1A] text-white px-6 py-3 rounded-2xl text-xs font-bold uppercase tracking-widest opacity-0 pointer-events-none transition-all duration-300 z-[100]">
+        Copied to clipboard!
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Single-Page Navigation Logic
+        function navigateTo(pageId) {
+            // Update Visibility
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+
+            // Update Nav Styling
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.textContent.toLowerCase().includes(pageId)) {
+                    link.classList.add('active-nav');
+                }
+            });
+
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function copyText(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            toast.style.transform = 'translate(-50%, -10px)';
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translate(-50%, 0)';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
